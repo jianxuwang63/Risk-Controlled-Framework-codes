@@ -591,7 +591,7 @@ async def submit_case(
             "patient_information",
         ],
         Form(),
-    ] = "held_out_validation",
+    ] = "workflow_rehearsal",
 ):
     if not backend.ready:
         raise HTTPException(status_code=503, detail=backend.reason or "model unavailable")

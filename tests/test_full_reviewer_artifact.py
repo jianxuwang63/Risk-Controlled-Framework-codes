@@ -17,7 +17,7 @@ def test_full_reviewer_launchers_use_real_local_validation_mode():
     }
     for platform, script in launchers.items():
         assert "APP_MODE=validation" in script, platform
-        assert "PILOT_PHASE=assisted" in script, platform
+        assert "PILOT_PHASE=silent" in script, platform
         assert "OFFLINE_ONLY=true" in script, platform
         assert "ALLOW_PRIVATE_LAN=false" in script, platform
         assert "PUBLIC_INTERNET_MODE=false" in script, platform
@@ -67,6 +67,15 @@ def test_public_artifact_contains_no_pathology_examples():
         text = _read(name)
         assert "reference-mip-associated.jpg" not in text
         assert "reference-comparator.jpg" not in text
+
+
+def test_reviewer_interface_defaults_to_non_evaluative_rehearsal():
+    html = _read("clinical_app/static/index.html")
+    assert (
+        '<option value="workflow_rehearsal" selected>'
+        "Workflow rehearsal — exclude from paper</option>"
+    ) in html
+    assert '<option value="held_out_validation" selected>' not in html
 
 
 def test_setup_launchers_verify_package_integrity_before_installing():

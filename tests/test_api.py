@@ -43,7 +43,11 @@ class ApiWorkflowTests(unittest.TestCase):
         self.assertEqual(self.client.get("/health/live").status_code, 200)
         response = self.client.post(
             "/api/v1/cases",
-            data={"case_ref": "PILOT-001", "submitted_by": "DOC-1"},
+            data={
+                "case_ref": "PILOT-001",
+                "submitted_by": "DOC-1",
+                "evidence_role": "held_out_validation",
+            },
             files=[
                 ("images", ("roi-1.png", self.image_bytes[0], "image/png")),
                 ("images", ("roi-2.png", self.image_bytes[1], "image/png")),
@@ -265,6 +269,7 @@ class ApiWorkflowTests(unittest.TestCase):
                 "submitted_by": "RESEARCHER-2",
                 "diagnosing_pathologist_id": "PATH-9",
                 "interaction_mode": "researcher_mediated",
+                "evidence_role": "held_out_validation",
             },
             files=[("images", ("roi.png", self.image_bytes[0], "image/png"))],
         )
@@ -332,6 +337,20 @@ class ApiWorkflowTests(unittest.TestCase):
         self.assertIn("interaction_mode", image_export.text)
         self.assertIn("researcher_mediated", image_export.text)
         self.assertIn("diagnosing_pathologist_id", image_export.text)
+
+    def test_zzz_default_evidence_role_is_workflow_rehearsal(self):
+        response = self.client.post(
+            "/api/v1/cases",
+            data={
+                "case_ref": "PILOT-DEFAULT-REHEARSAL",
+                "submitted_by": "DOC-DEFAULT",
+            },
+            files=[("images", ("roi.png", self.image_bytes[0], "image/png"))],
+        )
+        self.assertEqual(response.status_code, 200, response.text)
+        case = response.json()
+        self.assertEqual(case["evidence_role"], "workflow_rehearsal")
+        self.assertFalse(case["ai_result_visible"])
 
 
 if __name__ == "__main__":

@@ -24,7 +24,7 @@ for /L %%G in (1,1,5) do (
 )
 
 set "APP_MODE=validation"
-set "PILOT_PHASE=assisted"
+set "PILOT_PHASE=silent"
 set "OFFLINE_ONLY=true"
 set "ALLOW_PRIVATE_LAN=false"
 set "PUBLIC_INTERNET_MODE=false"

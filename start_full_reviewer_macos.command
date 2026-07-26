@@ -30,7 +30,7 @@ if [[ ! -f "$POLICY_PATH" ]]; then
 fi
 
 export APP_MODE=validation
-export PILOT_PHASE=assisted
+export PILOT_PHASE=silent
 export OFFLINE_ONLY=true
 export ALLOW_PRIVATE_LAN=false
 export PUBLIC_INTERNET_MODE=false

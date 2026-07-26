@@ -12,7 +12,7 @@ fi
 
 unset APP_API_KEY APP_SESSION_SECRET MODEL_CHECKPOINTS POLICY_PATH || true
 export APP_MODE=demo
-export PILOT_PHASE=assisted
+export PILOT_PHASE=silent
 export PUBLIC_INTERNET_MODE=false
 export OFFLINE_ONLY=true
 export ALLOW_PRIVATE_LAN=false
