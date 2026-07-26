@@ -1,0 +1,44 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+tmp/
+
+# Runtime state, credentials, databases, and retained uploads.
+runtime/
+local_secrets/
+*.key
+*.pem
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Clinical and validation image collections. No pathology image is tracked.
+clinical_app/static/examples/
+photos/
+photos_complete/
+new_data/
+newedata/
+202507_U*
+yes/
+no/
+
+# Model binaries and private deployment policy files are distributed separately.
+weights/*
+!weights/README.md
+
+# Local analyses, exports, manuscripts, and transfer archives.
+outputs/
+paper_outputs/
+overlap_review_output*/
+release_build/
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.pdf

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A precision morphology review environment for image-level assessment of lung adenocarcinoma micropapillary patterns.">
+  <title>HistoNexa | Precision Morphology Review</title>
+  <link rel="icon" href="/static/favicon.svg?v=0.10.15" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css?v=0.10.15">
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to review workspace</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Site navigation">
+      <div class="nav-brand-group">
+        <a class="brand" href="#top" aria-label="HistoNexa home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" role="presentation">
+              <defs><linearGradient id="histonexaMark" x1="11" y1="10" x2="34" y2="35" gradientUnits="userSpaceOnUse"><stop stop-color="#d8f3ed"/><stop offset="1" stop-color="#65b8aa"/></linearGradient></defs>
+              <circle class="mark-orbit" cx="22" cy="22" r="16.25"/>
+              <path class="mark-monogram" d="M14.5 29.5v-15l15 15v-15"/>
+              <circle class="mark-node" cx="14.5" cy="14.5" r="2.25"/>
+              <circle class="mark-core" cx="22" cy="22" r="2.05"/>
+              <circle class="mark-node" cx="29.5" cy="29.5" r="2.25"/>
+            </svg>
+          </span>
+          <span><strong>HistoNexa</strong><small>Precision Morphology Review</small></span>
+        </a>
+        <span class="edition-tag"><i aria-hidden="true"></i>Clinical Research Pilot</span>
+        <span id="appVersion" class="version-tag">v0.10.15</span>
+      </div>
+      <div class="nav-meta">
+        <span>PRECISION PATHOLOGY</span>
+        <div id="modeBadge" class="status-chip">Checking service</div>
+      </div>
+    </nav>
+    <div id="top" class="hero">
+      <div class="hero-copy-block">
+        <p class="overline">COMPUTATIONAL PATHOLOGY</p>
+        <h1><span>Precision review for</span><span>micropapillary morphology.</span></h1>
+        <p class="hero-copy"><strong>Image-level support for pathology review.</strong><span>Structured findings, traceable records, and specialist oversight.</span></p>
+        <div class="hero-credentials" aria-label="Platform attributes">
+          <span><b>01</b> Image-specific</span>
+          <span><b>02</b> Structured reports</span>
+          <span><b>03</b> Expert-controlled</span>
+        </div>
+      </div>
+      <div class="hero-showcase" aria-label="Controlled image review workflow">
+        <div class="showcase-heading"><span>CONTROLLED REVIEW PATHWAY</span><span>01 — 03</span></div>
+        <div class="showcase-flow">
+          <article>
+            <span>01</span>
+            <strong>Submit</strong>
+            <p>Add a permission-cleared local pathology image.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Review</strong>
+            <p>Record the independent assessment before revealing the model result.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>Document</strong>
+            <p>Retain a structured, image-level comparison and audit record.</p>
+          </article>
+        </div>
+        <p class="showcase-note">No pathology image is bundled with the public research artifact.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="access-card panel" aria-labelledby="accessHeading">
+      <div class="access-copy">
+        <p class="overline">SECURE ACCESS</p>
+        <h2 id="accessHeading">Enter the protected review suite</h2>
+        <p id="authStatus" class="subtle">Checking access status…</p>
+      </div>
+      <label class="access-field">Access credential
+        <input id="accessPassword" type="password" autocomplete="current-password" placeholder="Enter authorized credential">
+      </label>
+      <button id="loginAccess" class="button button-primary" type="button">Sign in</button>
+      <button id="logoutAccess" class="button button-quiet" type="button" hidden>Sign out</button>
+    </section>
+
+    <section class="platform-intro" aria-labelledby="platformHeading">
+      <div class="platform-index" aria-hidden="true"><span>LP</span><strong>01</strong></div>
+      <div class="platform-copy">
+        <p class="overline">THE REVIEW ENGINE</p>
+        <h2 id="platformHeading">HistoNexa-MIP</h2>
+        <p>HistoNexa-MIP evaluates each submitted pathology image as a separate review unit. Five frozen models consolidate their evidence into an image-level finding or request specialist review when the evidence is insufficient. The output is a documented second look—not a replacement for final pathological diagnosis.</p>
+      </div>
+      <dl class="platform-specs">
+        <div><dt>Analysis unit</dt><dd>One pathology image</dd></div>
+        <div><dt>Result set</dt><dd>Present · Absent · Review</dd></div>
+        <div><dt>Clinical position</dt><dd>Expert-led second review</dd></div>
+      </dl>
+    </section>
+
+    <section class="review-boundary" aria-labelledby="boundaryHeading">
+      <div>
+        <p class="overline">REVIEW BOUNDARY</p>
+        <h2 id="boundaryHeading">Designed for a careful second reading</h2>
+      </div>
+      <div class="boundary-points">
+        <article><span>01</span><strong>Image-specific</strong><p>No batch is converted into a patient diagnosis.</p></article>
+        <article><span>02</span><strong>Expert-resolved</strong><p>Discordant and inconclusive findings return to qualified review.</p></article>
+        <article><span>03</span><strong>Traceable</strong><p>Model identity, scores, timing, and review actions remain auditable.</p></article>
+      </div>
+    </section>
+
+    <section id="workspace" class="workspace-anchor" aria-hidden="true"></section>
+    <section id="identityPanel" class="panel protected-section">
+      <div class="section-title">
+        <div>
+          <p class="overline">CHOOSE YOUR WORKFLOW</p>
+          <h2>How will you use this review?</h2>
+        </div>
+        <span id="privacyPill" class="privacy-chip">Pseudonymous records only</span>
+      </div>
+      <div class="context-switch" role="radiogroup" aria-label="Review context">
+        <label class="context-option">
+          <input type="radio" name="useContext" value="pathologist_self_review" checked>
+          <span><strong>Pathologist self-review</strong><small>Record your initial assessment, then compare with the system result.</small></span>
+        </label>
+        <label class="context-option">
+          <input type="radio" name="useContext" value="patient_self_check">
+          <span><strong>Patient image information</strong><small>View educational information for each image; not a diagnosis.</small></span>
+        </label>
+      </div>
+      <div class="identity-row">
+        <label><span id="identityLabel">Pathologist ID</span>
+          <input id="identityId" type="text" maxlength="80" autocomplete="off" placeholder="e.g. PATH-07">
+        </label>
+        <p id="identityNotice" class="inline-note">Use a study-specific clinician code. Your initial assessment remains hidden until submitted.</p>
+      </div>
+      <div id="studyMetadata" class="study-row">
+        <label>Evaluation cohort
+          <input id="evaluationCohort" type="text" required maxlength="80" pattern="[A-Za-z0-9._-]+" placeholder="e.g. MIP-VAL-2026-01">
+          <small>Use the same cohort ID for the positive and negative folders.</small>
+        </label>
+        <label>Evidence role
+          <select id="evidenceRole">
+            <option value="held_out_validation" selected>Held-out validation</option>
+            <option value="controlled_post_launch_pilot">Controlled post-launch pilot</option>
+            <option value="workflow_rehearsal">Workflow rehearsal — exclude from paper</option>
+          </select>
+          <small>Select post-launch only when expert use and feedback occurred in the deployed workflow.</small>
+        </label>
+      </div>
+    </section>
+
+    <div class="workspace-grid">
+      <section class="panel upload-panel protected-section">
+        <div class="section-title">
+          <div>
+            <p class="overline">01 · ADD IMAGES</p>
+            <h2>Create an image review session</h2>
+          </div>
+          <span id="imageCounter" class="count-chip">0 images</span>
+        </div>
+        <form id="caseForm">
+          <label>Upload reference
+            <input id="caseRef" name="case_ref" required maxlength="80" pattern="[A-Za-z0-9._-]+" placeholder="e.g. REVIEW-2026-001">
+            <small>Use a pseudonymous reference. Do not enter a name, phone number, or medical record number.</small>
+          </label>
+          <div id="uploadBuilder" class="upload-builder">
+            <div class="upload-intro">
+              <span class="upload-icon" aria-hidden="true">+</span>
+              <div><strong>Add pathology images</strong><small>You may add more images at any time before analysis.</small></div>
+            </div>
+            <div class="upload-actions">
+              <label class="button button-secondary file-button" for="imageInput">
+                <input id="imageInput" type="file" accept="image/png,image/jpeg,image/tiff,image/bmp" multiple>
+                Choose images
+              </label>
+              <label class="button button-secondary file-button" for="folderInput">
+                <input id="folderInput" type="file" accept="image/png,image/jpeg,image/tiff,image/bmp" webkitdirectory directory multiple>
+                Import folder
+              </label>
+              <button id="clearImages" class="button button-quiet" type="button">Clear</button>
+            </div>
+            <p id="uploadEmpty" class="upload-empty">PNG, JPEG, TIFF, or BMP · up to 300 images per session</p>
+            <div id="uploadPreviewGrid" class="upload-preview-grid" aria-live="polite"></div>
+          </div>
+          <button id="submitButton" class="button button-primary button-wide" type="submit">Analyze images</button>
+          <div id="submissionStatus" class="submission-status" role="status" aria-live="polite" hidden></div>
+        </form>
+      </section>
+
+      <aside class="panel summary-panel">
+        <div class="section-title">
+          <div>
+            <p class="overline">02 · SESSION</p>
+            <h2>Review summary</h2>
+          </div>
+        </div>
+        <div id="emptyResult" class="empty-state">
+          <span class="empty-symbol" aria-hidden="true"></span>
+          <strong>No images analyzed yet</strong>
+          <p>Each submitted image will receive its own interpretation. A group of images is never combined into a patient diagnosis.</p>
+        </div>
+        <div id="resultSummary" hidden>
+          <div id="decision" class="decision-card"></div>
+          <dl class="summary-list">
+            <div><dt>Upload reference</dt><dd id="summaryReference">—</dd></div>
+            <div><dt>Images submitted</dt><dd id="summaryImages">—</dd></div>
+            <div><dt>Results available</dt><dd id="summaryAvailable">—</dd></div>
+            <div><dt>Specialist review advised</dt><dd id="summaryDeferred">—</dd></div>
+            <div><dt>Processing time</dt><dd id="summaryLatency">—</dd></div>
+          </dl>
+          <p id="clinicalNotice" class="clinical-note"></p>
+        </div>
+      </aside>
+    </div>
+
+    <section id="reportsPanel" class="panel reports-panel" hidden>
+      <div class="section-title report-tools">
+        <div>
+          <p class="overline">03 · IMAGE REPORTS</p>
+          <h2>Condensed image interpretations</h2>
+          <p class="subtle">Structured reporting for each named image: finding, morphologic context, recommended expert review, and explicit limitations.</p>
+        </div>
+        <button id="printReports" class="button button-secondary" type="button">Print / Save reports</button>
+      </div>
+      <div id="imageReports" class="image-reports"></div>
+    </section>
+
+    <section id="reviewSection" class="panel protected-section">
+      <div class="section-title">
+        <div>
+          <p class="overline">PATHOLOGIST SELF-REVIEW</p>
+          <h2>Image assessment queue</h2>
+        </div>
+        <button id="refreshQueue" class="button button-secondary" type="button">Refresh</button>
+      </div>
+      <p class="workflow-note">Assess each image before results are revealed. After comparison, record whether any image-level diagnosis changed. No patient-level label is generated.</p>
+      <div id="queue" class="queue"><p class="subtle">Loading…</p></div>
+    </section>
+
+    <section id="metricsSection" class="panel protected-section">
+      <div class="section-title">
+        <div>
+          <p class="overline">IMAGE-LEVEL MONITORING</p>
+          <h2>Evaluation monitoring</h2>
+        </div>
+        <div class="section-actions">
+          <button id="refreshMetrics" class="button button-secondary" type="button">Refresh</button>
+          <a class="button button-primary" data-export href="/api/v1/metrics/export-paper.csv">Paper Validation Table CSV</a>
+          <a class="button button-secondary" data-export href="/api/v1/metrics/export.csv">Image Predictions CSV</a>
+          <a class="button button-secondary" data-export href="/api/v1/metrics/export-paper-long.csv">Metric Dictionary CSV</a>
+          <a class="button button-secondary" data-export href="/api/v1/metrics/export-audit.csv">Audit CSV</a>
+        </div>
+      </div>
+      <div id="metrics" class="metrics-grid"><p class="subtle">Loading…</p></div>
+      <p id="metricsNotice" class="footnote">The on-screen dashboard is an operational view of all eligible labelled images. Paper Validation Table CSV applies the registered independence-audit scopes; use that export—not the pooled dashboard—as the manuscript result. Patient-information and workflow-rehearsal sessions are excluded.</p>
+      <div class="reviewer-section">
+        <h3>Reviewer summaries</h3>
+        <div id="physicianMetrics" class="reviewer-grid"><p class="subtle">No completed image reviews yet.</p></div>
+      </div>
+    </section>
+
+    <section class="safety-footer" aria-label="Important information">
+      <strong>Important</strong>
+      <p>This service evaluates only the uploaded images. It cannot review the complete specimen, establish a final diagnosis, determine stage, predict prognosis, or prescribe surgery or treatment. An inconclusive or negative image result does not exclude disease elsewhere.</p>
+    </section>
+
+    <footer class="app-footer">
+      <span>HistoNexa-MIP · Clinical Research Pilot</span>
+      <span id="footerVersion">v0.10.15 · image-level decision support · expert review required</span>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/static/app.js?v=0.10.15" defer></script>
+</body>
+</html>
