@@ -6,15 +6,17 @@ This repository contains the experimental implementation of **"A Risk-Controlled
 
 ## Reviewer artifacts
 
-### Full reviewer package: temporarily withdrawn
+### Full reviewer package: v0.10.15
 
-The previously published v0.10.15 full-reviewer archive has been withdrawn.
-Two pathology examples bundled in that archive did not have publication
-approval, and redistribution of the Phikon-derived checkpoints remains under
-third-party license review. No pathology image or model checkpoint is
-distributed from this repository at present. A new full package will be
-published only after the required image/data permissions and checkpoint
-redistribution rights have been documented.
+The [v0.10.15 GitHub Release](https://github.com/jianxuwang63/Risk-Controlled-Framework-codes/releases/tag/v0.10.15)
+contains the complete local reviewer application, the exact five frozen
+Cost=5 checkpoints, the hash-bound Case 4 FNR-5% deployment policy, and
+cross-platform setup and launch scripts. The package performs real five-model
+inference and verifies every checkpoint before startup. It contains no
+pathology image, hospital or pilot database, physician record, credential, or
+access key. See
+[START_HERE_FULL_REVIEWER.md](START_HERE_FULL_REVIEWER.md) for Windows, macOS,
+and Linux instructions.
 
 ### Source repository: lightweight interface demo
 
@@ -32,14 +34,13 @@ python -m pip install -r requirements-app.txt
 Then open <http://127.0.0.1:8000/>. macOS and Windows launchers are also
 provided. See [REVIEWER_QUICKSTART.md](REVIEWER_QUICKSTART.md).
 
-This lightweight demonstration uses deterministic placeholder scores and does not
-reproduce the paper's model results. The five Cost=5 checkpoints, hospital
-images, pilot databases, credentials, and retained physician records are not
-included in the normal source checkout. Because the full package is currently
-withdrawn, public downloads support interface inspection only. Reviewers may
-use only pathology images that they are authorized to process. The interface
-demo complements—but does not replace—the controlled physician pilot and its
-post-launch measurements.
+This lightweight demonstration uses deterministic placeholder scores and does
+not reproduce the paper's model results. The five Cost=5 checkpoints are
+provided only in the v0.10.15 Release package, not in the normal source
+checkout. Hospital images, pilot databases, credentials, and retained physician
+records are never included. Reviewers may use only pathology images that they
+are authorized to process. The interface demo complements—but does not
+replace—the controlled physician pilot and its post-launch measurements.
 
 ## Hospital Pilot Application
 
@@ -94,12 +95,13 @@ licensed under the [Apache License 2.0](LICENSE). That license does **not**
 apply to third-party models, model checkpoints, pathology images, clinical
 records, or other data.
 
-Phikon is provided by Owkin under a separate non-commercial license. Any
-Phikon-derived checkpoint must be used and shared only to the extent permitted
-by that license and any applicable institutional agreement. See
-[THIRD_PARTY_MODEL_NOTICE.md](THIRD_PARTY_MODEL_NOTICE.md). No Phikon-derived
-checkpoint is currently distributed from the source repository or a GitHub
-Release while redistribution authorization is being confirmed.
+Phikon is provided by Owkin under a separate non-commercial license. The
+Phikon-derived checkpoints in the v0.10.15 Release are supplied solely for
+academic reproducibility review by eligible non-profit users. They are not
+covered by this repository's Apache-2.0 license and may be used only to the
+extent permitted by the original Owkin license and any applicable
+institutional agreement. See
+[THIRD_PARTY_MODEL_NOTICE.md](THIRD_PARTY_MODEL_NOTICE.md).
 
 No pathology image is included in the public repository. The software license
 grants no right to use patient data, hospital images, institutional names, or

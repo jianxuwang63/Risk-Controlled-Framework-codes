@@ -24,9 +24,11 @@ granted. The Apache-2.0 license at the repository root applies only to the
 authors' original source code and documentation; it does not relicense Phikon,
 any Phikon-derived checkpoint, or any other third-party material.
 
-No Phikon-derived checkpoint is currently distributed from the public source
-repository or a GitHub Release while written redistribution authorization is
-being confirmed.
+The five Phikon-derived Cost-5 checkpoints are distributed in the v0.10.15
+GitHub Release solely for academic reproducibility review by eligible
+non-profit users. They are not part of the source repository and are not
+licensed under Apache-2.0. Downloading or using them does not grant rights
+beyond the original Owkin license or any applicable institutional agreement.
 
 ## Research and clinical-use boundary
 

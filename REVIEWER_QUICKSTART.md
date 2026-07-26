@@ -1,12 +1,14 @@
 # HistoNexa-MIP reviewer quick start
 
-## Current public artifact
+## Choose the correct artifact
 
-The public artifact currently consists of the lightweight source-repository
-demo described below, which uses deterministic placeholder scores and does not
-require checkpoints. The full reviewer package has been temporarily withdrawn
-pending image-permission and third-party checkpoint-license review. Do not use
-the lightweight demo to reproduce model outputs.
+- For complete real-model verification, download the full
+  [v0.10.15 GitHub Release](https://github.com/jianxuwang63/Risk-Controlled-Framework-codes/releases/tag/v0.10.15)
+  and follow [START_HERE_FULL_REVIEWER.md](START_HERE_FULL_REVIEWER.md). It
+  contains the exact five Cost=5 checkpoints and frozen deployment policy.
+- For interface-only inspection, use the lightweight source-repository demo
+  described below. It uses deterministic placeholder scores and must not be
+  used to reproduce model outputs.
 
 This repository contains a local, password-free reviewer demonstration of the
 deployed HistoNexa-MIP interface. It is intended to make the application
@@ -19,8 +21,10 @@ exports inspectable without transmitting pathology images to an online service.
   the five trained checkpoints and must not be used to verify paper metrics.
 - No pathology image is bundled. Use only a local image that you are authorized
   to process.
-- The repository does not contain pathology images, pilot databases, access
-  credentials, model checkpoints, or retained physician records.
+- The normal source checkout does not contain pathology images, pilot
+  databases, access credentials, model checkpoints, or retained physician
+  records. The five checkpoints are distributed only in the full v0.10.15
+  Release package.
 - The ADS deployment evidence is the controlled physician pilot and its
   post-launch measurements described in the paper. Repository availability is
   complementary reproducibility evidence, not the deployment itself.

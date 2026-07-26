@@ -1,9 +1,9 @@
 # Model files
 
-The source repository does not track trained checkpoint binaries. GitHub
-Release builds may include the exact five checkpoints as downloadable binary
-assets or inside the full reviewer ZIP. Neither distribution includes hospital
-data, access credentials, or the active pilot database.
+The source repository does not track trained checkpoint binaries. The
+v0.10.15 GitHub Release includes the exact five checkpoints inside the full
+reviewer ZIP. The package includes no pathology image, hospital data, access
+credential, physician record, or active pilot database.
 
 The password-free reviewer demonstration runs with `APP_MODE=demo` and does not
 require this directory. Its deterministic placeholder scores are provided only
